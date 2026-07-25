@@ -21,6 +21,7 @@ export function Candidato() {
               "radial-gradient(ellipse 60% 50% at 15% 0%, rgba(0,196,228,0.35), transparent), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(0,196,228,0.18), transparent)",
           }}
         />
+        <div className="bg-grain pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay" />
         <div className="container-page relative section-y">
           <Link
             to="/autarquicas-2025"
@@ -36,6 +37,7 @@ export function Candidato() {
             />
             <div>
               <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-display text-xs font-semibold uppercase tracking-widest text-liberal-300">
+                <span className="brand-dot h-1.5 w-1.5 shrink-0 rounded-full" />
                 {candidate.role}
               </p>
               <h1 className="text-balance font-display text-4xl font-bold leading-[1.05] sm:text-5xl">
@@ -44,6 +46,7 @@ export function Candidato() {
             </div>
           </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-liberal-600 via-liberal-400 to-liberal-300 opacity-70" />
       </section>
 
       <section className="section-y">

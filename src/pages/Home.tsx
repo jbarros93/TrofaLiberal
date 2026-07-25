@@ -9,6 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button, Card, SectionHeading, Tag } from "../components/ui";
+import { BrandMotif } from "../components/BrandMotif";
 import { brand, candidates, proposalAreas } from "../data/content";
 import { Link } from "react-router-dom";
 
@@ -80,6 +81,8 @@ export function Home() {
             backgroundSize: "56px 56px",
           }}
         />
+        <div className="bg-grain pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay" />
+        <BrandMotif className="pointer-events-none absolute -right-10 top-1/2 hidden h-[130%] -translate-y-1/2 opacity-80 lg:block" />
         <div className="container-page relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-center py-20 sm:py-28">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -87,6 +90,7 @@ export function Home() {
             transition={{ duration: 0.6 }}
           >
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-widest text-liberal-300">
+              <span className="brand-dot h-1.5 w-1.5 shrink-0 rounded-full" />
               Núcleo Territorial da Trofa
             </p>
             <h1 className="max-w-4xl text-balance font-display text-5xl font-bold leading-[1.03] sm:text-6xl lg:text-7xl">
@@ -109,6 +113,7 @@ export function Home() {
             </div>
           </motion.div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-liberal-600 via-liberal-400 to-liberal-300 opacity-80" />
       </section>
 
       <section className="border-b border-black/5 bg-white py-10">

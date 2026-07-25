@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="mb-3 inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-widest text-liberal-600">
-      <span className="h-1.5 w-1.5 rounded-full bg-liberal-500" />
+      <span className="brand-dot h-1.5 w-1.5 shrink-0 rounded-full" />
       {children}
     </p>
   );
@@ -31,7 +31,7 @@ export function SectionHeading({
             invert ? "text-liberal-400" : "text-liberal-600"
           }`}
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-liberal-500" />
+          <span className="brand-dot h-1.5 w-1.5 shrink-0 rounded-full" />
           {eyebrow}
         </p>
       )}
@@ -72,11 +72,11 @@ export function Button({
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-sm font-semibold transition-all duration-200 active:scale-[0.97]";
   const styles: Record<string, string> = {
     primary:
-      "bg-liberal-500 text-white shadow-lg shadow-liberal-500/25 hover:bg-liberal-600 hover:shadow-liberal-600/30",
+      "bg-liberal-500 text-white shadow-lg shadow-liberal-500/25 hover:-translate-y-0.5 hover:bg-liberal-600 hover:shadow-xl hover:shadow-liberal-600/30",
     secondary:
-      "bg-white text-ink border border-black/10 hover:border-liberal-400 hover:text-liberal-600",
+      "bg-white text-ink border border-black/10 hover:-translate-y-0.5 hover:border-liberal-400 hover:text-liberal-600 hover:shadow-md",
     ghost: "text-ink hover:text-liberal-600",
-    dark: "bg-ink text-white hover:bg-ink-soft",
+    dark: "bg-ink text-white hover:-translate-y-0.5 hover:bg-ink-soft hover:shadow-xl hover:shadow-black/20",
   };
   const cls = `${base} ${styles[variant]} ${className}`;
 
@@ -104,14 +104,19 @@ export function Button({
 export function Card({
   children,
   className = "",
+  accent = false,
 }: {
   children: ReactNode;
   className?: string;
+  accent?: boolean;
 }) {
   return (
     <div
-      className={`rounded-2xl border border-black/5 bg-white p-6 shadow-sm shadow-black/[0.02] transition-shadow hover:shadow-md hover:shadow-black/5 ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-black/5 bg-white p-6 shadow-sm shadow-black/[0.02] transition-all duration-300 hover:-translate-y-0.5 hover:border-liberal-200 hover:shadow-lg hover:shadow-liberal-900/[0.06] ${className}`}
     >
+      {accent && (
+        <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-liberal-600 to-liberal-300" />
+      )}
       {children}
     </div>
   );

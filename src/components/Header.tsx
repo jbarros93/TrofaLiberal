@@ -17,8 +17,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur-md">
-      <div className="container-page flex h-18 items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2.5">
+      <div className="container-page flex h-18 items-center justify-between gap-4 py-3">
+        <Link to="/" className="flex shrink-0 items-center gap-2.5">
           <img src="/il-trofa-mark.png" alt="" className="h-9 w-9 rounded-full" />
           <span className="font-display text-base font-bold leading-tight text-ink">
             Iniciativa Liberal
@@ -28,14 +28,14 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 xl:flex">
+        <nav className="hidden items-center xl:flex">
           {nav.map((item) => (
             <div key={item.label} className="group relative">
               <NavLink
                 to={item.to ?? "#"}
                 end={item.to === "/"}
                 className={({ isActive }) =>
-                  `flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 font-display text-sm font-semibold transition-colors ${
+                  `flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-2 font-display text-xs font-bold uppercase tracking-normal transition-colors ${
                     isActive
                       ? "text-liberal-600"
                       : "text-ink-soft hover:text-liberal-600"
@@ -52,7 +52,7 @@ export function Header() {
                       key={child.to}
                       to={child.to}
                       className={({ isActive }) =>
-                        `block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                        `block whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
                           isActive
                             ? "bg-liberal-50 text-liberal-700"
                             : "text-ink-soft hover:bg-black/[0.03] hover:text-ink"
@@ -95,7 +95,7 @@ export function Header() {
                 <div key={item.label}>
                   {item.children ? (
                     <button
-                      className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-left font-display text-base font-semibold text-ink"
+                      className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-left font-display text-sm font-bold uppercase tracking-wide text-ink"
                       onClick={() =>
                         setMobileGroup((g) => (g === item.label ? null : item.label))
                       }
@@ -110,7 +110,7 @@ export function Header() {
                   ) : (
                     <Link
                       to={item.to ?? "/"}
-                      className="block w-full rounded-lg px-2 py-3 font-display text-base font-semibold text-ink"
+                      className="block w-full rounded-lg px-2 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink"
                     >
                       {item.label}
                     </Link>
@@ -121,7 +121,7 @@ export function Header() {
                         <Link
                           key={child.to}
                           to={child.to}
-                          className="rounded-lg px-2 py-2.5 text-sm font-medium text-ink-soft/80 hover:text-liberal-600"
+                          className="rounded-lg px-2 py-2.5 text-xs font-bold uppercase tracking-wide text-ink-soft/80 hover:text-liberal-600"
                         >
                           {child.label}
                         </Link>

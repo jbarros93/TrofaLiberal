@@ -2,6 +2,7 @@ import { ArrowRight, BookOpen, Calendar, Download, Image, MessageSquare, PlayCir
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button, Card, SectionHeading } from "../components/ui";
+import { BrandMotif } from "../components/BrandMotif";
 import { brand, candidates, programs } from "../data/content";
 
 export function Autarquicas() {
@@ -12,9 +13,11 @@ export function Autarquicas() {
           className="pointer-events-none absolute inset-0 opacity-50"
           style={{
             background:
-              "radial-gradient(ellipse 60% 60% at 85% 0%, rgba(0,196,228,0.35), transparent 70%)",
+              "radial-gradient(ellipse 60% 60% at 85% 0%, rgba(0,196,228,0.35), transparent 70%), radial-gradient(ellipse 40% 40% at 10% 100%, rgba(0,196,228,0.15), transparent 70%)",
           }}
         />
+        <div className="bg-grain pointer-events-none absolute inset-0 opacity-[0.06] mix-blend-overlay" />
+        <BrandMotif className="pointer-events-none absolute -right-8 top-1/2 hidden h-[135%] -translate-y-1/2 opacity-80 lg:block" />
         <div className="container-page relative section-y">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -23,6 +26,7 @@ export function Autarquicas() {
             className="max-w-3xl"
           >
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-display text-xs font-semibold uppercase tracking-widest text-liberal-300">
+              <span className="brand-dot h-1.5 w-1.5 shrink-0 rounded-full" />
               Autárquicas 2025
             </p>
             <h1 className="text-balance font-display text-5xl font-bold leading-[1.02] sm:text-6xl lg:text-7xl">
@@ -40,6 +44,7 @@ export function Autarquicas() {
             </div>
           </motion.div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-liberal-600 via-liberal-400 to-liberal-300 opacity-70" />
       </section>
 
       <section className="section-y">
@@ -104,13 +109,14 @@ export function Autarquicas() {
               >
                 <Link
                   to={`/autarquicas-2025/candidatos/${c.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-liberal-200 hover:shadow-xl hover:shadow-liberal-900/[0.08]"
                 >
+                  <span className="absolute inset-x-0 top-0 h-[3px] scale-x-0 bg-gradient-to-r from-liberal-600 to-liberal-300 transition-transform duration-300 group-hover:scale-x-100" />
                   <div className="flex items-center gap-4">
                     <img
                       src={c.photo}
                       alt={c.name}
-                      className="h-14 w-14 shrink-0 rounded-full object-cover object-top"
+                      className="h-14 w-14 shrink-0 rounded-full object-cover object-top ring-2 ring-liberal-50 transition-all group-hover:ring-liberal-200"
                     />
                     <div>
                       <h3 className="font-display text-lg font-bold text-ink">{c.name}</h3>

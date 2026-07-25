@@ -19,11 +19,6 @@
   --color-liberal-900: #10536a;
   --color-liberal-950: #073448;
 
-  --color-red-flag-50: #fef2f2;
-  --color-red-flag-400: #f3646b;
-  --color-red-flag-500: #e0202c;
-  --color-red-flag-600: #c01522;
-
   --color-navy-50: #f2f6fb;
   --color-navy-100: #e2eaf4;
   --color-navy-200: #c4d3e6;
@@ -59,6 +54,11 @@
   ::selection {
     @apply bg-liberal-400/30 text-liberal-800;
   }
+  :focus-visible {
+    outline: 2px solid var(--color-liberal-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
 
 @layer utilities {
@@ -70,5 +70,20 @@
   }
   .section-y {
     @apply py-16 sm:py-24;
+  }
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .brand-dot {
+    background: linear-gradient(
+      180deg,
+      var(--color-liberal-300) 50%,
+      var(--color-liberal-600) 50%
+    );
   }
 }

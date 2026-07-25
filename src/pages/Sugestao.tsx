@@ -2,7 +2,7 @@ import { CheckCircle2, Send } from "lucide-react";
 import { PageHero } from "../components/PageHero";
 import { Card } from "../components/ui";
 import { Field, Input, Select, Textarea } from "../components/form";
-import { temas } from "../data/content";
+import { proposalAreas } from "../data/content";
 import { useFormSubmit } from "../lib/useFormSubmit";
 
 export function Sugestao() {
@@ -44,7 +44,7 @@ export function Sugestao() {
                     <option value="" disabled>
                       Escolhe um tema
                     </option>
-                    {temas.map((t) => (
+                    {proposalAreas.map((t) => (
                       <option key={t.title} value={t.title}>
                         {t.title}
                       </option>

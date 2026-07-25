@@ -18,7 +18,7 @@ export function PageHero({
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 15% 0%, rgba(255,106,15,0.35), transparent), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(255,106,15,0.18), transparent)",
+            "radial-gradient(ellipse 60% 50% at 15% 0%, rgba(0,196,228,0.35), transparent), radial-gradient(ellipse 50% 40% at 100% 100%, rgba(0,196,228,0.18), transparent)",
         }}
       />
       <div className="container-page relative section-y">

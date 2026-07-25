@@ -17,12 +17,7 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10">
-              <svg viewBox="0 0 64 64" className="h-5 w-5">
-                <path d="M14 46 L28 18 L37 18 L23 46 Z" fill="#ff6a0f" />
-                <path d="M31 46 L45 18 L54 18 L40 46 Z" fill="#ff6a0f" />
-              </svg>
-            </span>
+            <img src="/il-trofa-mark.png" alt="" className="h-9 w-9 rounded-full" />
             <span className="font-display text-base font-bold">
               {brand.name}
             </span>
@@ -113,7 +108,9 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Iniciativa Liberal Trofa. Todos os direitos reservados.</p>
-          <p>Núcleo territorial da Iniciativa Liberal</p>
+          <Link to="/privacidade" className="hover:text-white/70">
+            Política de Privacidade
+          </Link>
         </div>
       </div>
     </footer>

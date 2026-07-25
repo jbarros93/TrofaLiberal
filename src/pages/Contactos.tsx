@@ -40,9 +40,16 @@ export function Contactos() {
                 <div>
                   <h3 className="font-display font-bold text-ink">WhatsApp</h3>
                   <p className="text-sm text-ink-soft/70">
-                    Segue o nosso canal Trofa Liberal e conversa connosco no
-                    grupo Café Liberal.
+                    Junta-te ao nosso grupo e conversa connosco em tempo real.
                   </p>
+                  <a
+                    href={brand.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 inline-block text-sm font-semibold text-liberal-600 hover:underline"
+                  >
+                    Entrar no grupo →
+                  </a>
                 </div>
               </div>
             </Card>

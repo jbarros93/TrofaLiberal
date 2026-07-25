@@ -19,12 +19,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur-md">
       <div className="container-page flex h-18 items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink">
-            <svg viewBox="0 0 64 64" className="h-5 w-5">
-              <path d="M14 46 L28 18 L37 18 L23 46 Z" fill="#ff6a0f" />
-              <path d="M31 46 L45 18 L54 18 L40 46 Z" fill="#ff6a0f" />
-            </svg>
-          </span>
+          <img src="/il-trofa-mark.png" alt="" className="h-9 w-9 rounded-full" />
           <span className="font-display text-base font-bold leading-tight text-ink">
             Iniciativa Liberal
             <span className="block text-xs font-semibold uppercase tracking-widest text-liberal-600">

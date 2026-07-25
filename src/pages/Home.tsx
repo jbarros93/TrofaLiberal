@@ -9,7 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button, Card, SectionHeading, Tag } from "../components/ui";
-import { brand, temas } from "../data/content";
+import { brand, proposalAreas } from "../data/content";
 import { Link } from "react-router-dom";
 
 const pillars = [
@@ -62,7 +62,7 @@ export function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 55% at 20% 10%, rgba(255,106,15,0.4), transparent 70%), radial-gradient(ellipse 45% 45% at 90% 90%, rgba(255,106,15,0.2), transparent 70%)",
+              "radial-gradient(ellipse 55% 55% at 20% 10%, rgba(0,196,228,0.4), transparent 70%), radial-gradient(ellipse 45% 45% at 90% 90%, rgba(0,196,228,0.2), transparent 70%)",
           }}
         />
         <div
@@ -174,11 +174,11 @@ export function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Propostas"
-            title="Temas que nos movem"
-            text="Um concelho mais livre precisa de ideias concretas. Estes são alguns dos temas em que trabalhamos."
+            title="10 áreas estratégicas"
+            text="Um concelho mais livre precisa de ideias concretas. Estas são as áreas em que trabalhamos, com medidas específicas para cada uma."
           />
           <div className="mt-10 flex flex-wrap gap-2.5">
-            {temas.map((t) => (
+            {proposalAreas.map((t) => (
               <Tag key={t.title}>{t.title}</Tag>
             ))}
           </div>

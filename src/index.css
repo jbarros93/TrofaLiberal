@@ -7,17 +7,22 @@
   --color-ink: #0d0d10;
   --color-ink-soft: #1c1c22;
 
-  --color-liberal-50: #fff6ed;
-  --color-liberal-100: #ffead4;
-  --color-liberal-200: #ffd1a8;
-  --color-liberal-300: #ffb070;
-  --color-liberal-400: #ff8536;
-  --color-liberal-500: #ff6a0f;
-  --color-liberal-600: #f14f05;
-  --color-liberal-700: #c73906;
-  --color-liberal-800: #9e2e0d;
-  --color-liberal-900: #7f280e;
-  --color-liberal-950: #451105;
+  --color-liberal-50: #eafcff;
+  --color-liberal-100: #cef6ff;
+  --color-liberal-200: #a6eeff;
+  --color-liberal-300: #66e2fb;
+  --color-liberal-400: #22cdee;
+  --color-liberal-500: #00c4e4;
+  --color-liberal-600: #00a0c4;
+  --color-liberal-700: #0480a0;
+  --color-liberal-800: #0b6680;
+  --color-liberal-900: #10536a;
+  --color-liberal-950: #073448;
+
+  --color-red-flag-50: #fef2f2;
+  --color-red-flag-400: #f3646b;
+  --color-red-flag-500: #e0202c;
+  --color-red-flag-600: #c01522;
 
   --color-navy-50: #f2f6fb;
   --color-navy-100: #e2eaf4;

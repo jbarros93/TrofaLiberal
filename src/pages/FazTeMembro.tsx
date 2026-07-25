@@ -1,8 +1,9 @@
-import { CheckCircle2, Rocket } from "lucide-react";
+import { CheckCircle2, MessageCircle, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import { PageHero } from "../components/PageHero";
 import { Card, SectionHeading } from "../components/ui";
 import { Checkbox, Field, Input } from "../components/form";
-import { membershipReasons } from "../data/content";
+import { brand, membershipReasons } from "../data/content";
 import { useFormSubmit } from "../lib/useFormSubmit";
 
 export function FazTeMembro() {
@@ -34,6 +35,17 @@ export function FazTeMembro() {
                 Deixa os teus dados e serás contactado pelo núcleo da Trofa. Parabéns por teres iniciativa.
               </p>
             </div>
+            <a
+              href={brand.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 flex items-center gap-3 rounded-2xl border border-black/10 p-5 transition-colors hover:border-liberal-400"
+            >
+              <MessageCircle className="h-6 w-6 shrink-0 text-liberal-600" />
+              <span className="text-sm font-semibold text-ink">
+                Prefere algo mais rápido? Junta-te já ao nosso grupo de WhatsApp.
+              </span>
+            </a>
           </div>
 
           <div className="lg:col-span-3">
@@ -71,12 +83,15 @@ export function FazTeMembro() {
                       required
                       label={
                         <>
-                          Li e aceito a Política de Privacidade, e autorizo o
-                          tratamento dos meus dados para efeitos de contacto e
-                          envio do formulário de adesão, bem como o envio de
-                          comunicações da Iniciativa Liberal através dos seus
-                          canais de comunicação, podendo gerir as minhas
-                          preferências a qualquer momento.
+                          Li e aceito a{" "}
+                          <Link to="/privacidade" className="font-semibold text-liberal-600 hover:underline">
+                            Política de Privacidade
+                          </Link>
+                          , e autorizo o tratamento dos meus dados para efeitos
+                          de contacto e envio do formulário de adesão, bem como
+                          o envio de comunicações da Iniciativa Liberal
+                          através dos seus canais de comunicação, podendo
+                          gerir as minhas preferências a qualquer momento.
                         </>
                       }
                     />

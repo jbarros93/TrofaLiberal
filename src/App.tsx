@@ -16,6 +16,7 @@ import { AquiHaParlamento } from "./pages/AquiHaParlamento";
 import { Autarquicas } from "./pages/Autarquicas";
 import { Candidato } from "./pages/Candidato";
 import { Loja } from "./pages/Loja";
+import { Privacidade } from "./pages/Privacidade";
 import { NotFound } from "./pages/NotFound";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="autarquicas-2025" element={<Autarquicas />} />
         <Route path="autarquicas-2025/candidatos/:slug" element={<Candidato />} />
         <Route path="loja" element={<Loja />} />
+        <Route path="privacidade" element={<Privacidade />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

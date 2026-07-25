@@ -392,15 +392,18 @@ export const storeProducts = [
     name: "Pin IL Trofa",
     price: "3€",
     text: "O símbolo liberal ao peito, discreto e com atitude.",
+    icon: "pin",
   },
   {
     name: "Crachá",
     price: "2€",
     text: "Mostra o teu apoio em qualquer evento ou reunião.",
+    icon: "badge",
   },
   {
     name: "T-Shirt — Trofa Para Cima 2025",
     price: "15€",
     text: "A t-shirt oficial da campanha autárquica 2025.",
+    icon: "shirt",
   },
-];
+] as const;

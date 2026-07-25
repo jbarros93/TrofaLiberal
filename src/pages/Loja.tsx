@@ -1,7 +1,13 @@
-import { Heart, ShoppingBag } from "lucide-react";
+import { Heart, IdCard, Pin, Shirt } from "lucide-react";
 import { PageHero } from "../components/PageHero";
 import { Button, Card, SectionHeading } from "../components/ui";
 import { brand, storeProducts } from "../data/content";
+
+const productIcons = {
+  pin: Pin,
+  badge: IdCard,
+  shirt: Shirt,
+};
 
 export function Loja() {
   return (
@@ -16,21 +22,24 @@ export function Loja() {
         <div className="container-page">
           <SectionHeading eyebrow="Produtos" title="Escolhe os teus favoritos" text="Ajuda-nos a levar mais longe as ideias da liberdade." />
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
-            {storeProducts.map((p) => (
-              <Card key={p.name} className="flex flex-col">
-                <div className="flex aspect-square items-center justify-center rounded-xl bg-liberal-50 text-liberal-300">
-                  <ShoppingBag className="h-12 w-12" />
-                </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">{p.name}</h3>
-                <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-soft/70">{p.text}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="font-display text-xl font-bold text-liberal-600">{p.price}</span>
-                  <Button href={`mailto:${brand.email}?subject=Encomenda: ${encodeURIComponent(p.name)}`} variant="secondary">
-                    Encomendar
-                  </Button>
-                </div>
-              </Card>
-            ))}
+            {storeProducts.map((p) => {
+              const Icon = productIcons[p.icon];
+              return (
+                <Card key={p.name} className="flex flex-col">
+                  <div className="flex aspect-square items-center justify-center rounded-xl bg-liberal-50 text-liberal-400">
+                    <Icon className="h-12 w-12" strokeWidth={1.25} />
+                  </div>
+                  <h3 className="mt-4 font-display text-lg font-bold text-ink">{p.name}</h3>
+                  <p className="mt-1 flex-1 text-sm leading-relaxed text-ink-soft/70">{p.text}</p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="font-display text-xl font-bold text-liberal-600">{p.price}</span>
+                    <Button href={`mailto:${brand.email}?subject=Encomenda: ${encodeURIComponent(p.name)}`} variant="secondary">
+                      Encomendar
+                    </Button>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

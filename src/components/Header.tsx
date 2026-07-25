@@ -28,14 +28,14 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:flex">
           {nav.map((item) => (
             <div key={item.label} className="group relative">
               <NavLink
                 to={item.to ?? "#"}
                 end={item.to === "/"}
                 className={({ isActive }) =>
-                  `flex items-center gap-1 rounded-full px-3.5 py-2 font-display text-sm font-semibold transition-colors ${
+                  `flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 font-display text-sm font-semibold transition-colors ${
                     isActive
                       ? "text-liberal-600"
                       : "text-ink-soft hover:text-liberal-600"
@@ -68,13 +68,13 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Button to="/trofa-liberal/faz-te-membro">Faz-te Membro</Button>
         </div>
 
         <button
           aria-label="Abrir menu"
-          className="flex h-10 w-10 items-center justify-center rounded-full text-ink lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-ink xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -88,7 +88,7 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-black/5 bg-white lg:hidden"
+            className="overflow-hidden border-t border-black/5 bg-white xl:hidden"
           >
             <div className="container-page flex flex-col gap-1 py-3">
               {nav.map((item) => (

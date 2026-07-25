@@ -1,4 +1,4 @@
-import { ArrowRight, Download, PlayCircle } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Download, Image, MessageSquare, PlayCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button, Card, SectionHeading } from "../components/ui";
@@ -126,6 +126,34 @@ export function Autarquicas() {
                   </span>
                 </Link>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-black/[0.02]">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Campanha"
+            title="Materiais da campanha"
+            text="Cartazes, mensagens, brochuras e registos da campanha Trofa Para Cima."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Image, title: "Cartazes" },
+              { icon: MessageSquare, title: "Mensagens" },
+              { icon: Calendar, title: "Eventos e Campanha" },
+              { icon: BookOpen, title: "Brochuras" },
+            ].map((m) => (
+              <Card key={m.title} className="flex flex-col items-start">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-liberal-50 text-liberal-600">
+                  <m.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 font-display text-base font-bold text-ink">{m.title}</h3>
+                <p className="mt-4 w-full rounded-xl border-2 border-dashed border-black/10 py-5 text-center text-xs font-medium text-ink-soft/40">
+                  Em breve
+                </p>
+              </Card>
             ))}
           </div>
         </div>

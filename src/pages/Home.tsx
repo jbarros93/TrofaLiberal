@@ -9,8 +9,15 @@ import {
   Users,
 } from "lucide-react";
 import { Button, Card, SectionHeading, Tag } from "../components/ui";
-import { brand, proposalAreas } from "../data/content";
+import { brand, candidates, proposalAreas } from "../data/content";
 import { Link } from "react-router-dom";
+
+const stats = [
+  { value: String(proposalAreas.length), label: "Áreas estratégicas de intervenção" },
+  { value: String(candidates.length), label: "Candidatos nas Autárquicas 2025" },
+  { value: "2022", label: "Fundação do núcleo na Trofa" },
+  { value: "2017", label: "Fundação da Iniciativa Liberal" },
+];
 
 const pillars = [
   {
@@ -101,6 +108,21 @@ export function Home() {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="border-b border-black/5 bg-white py-10">
+        <div className="container-page grid grid-cols-2 gap-6 sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center sm:text-left">
+              <p className="font-display text-3xl font-bold text-liberal-600 sm:text-4xl">
+                {s.value}
+              </p>
+              <p className="mt-1 text-xs font-medium leading-snug text-ink-soft/60 sm:text-sm">
+                {s.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
